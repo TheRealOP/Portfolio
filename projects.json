@@ -1,0 +1,50 @@
+[
+  {
+    "title": "DiscoNeck – iOS Productivity App",
+    "description": "Developing an iOS app using SwiftUI, FamilyControls, and ManagedSettings APIs to block distracting apps. Implemented app blocking groups with persistence, edit/create flows, and Shortcuts integration for automation. Focused on improving digital well-being by automating phone use boundaries.",
+    "year": "2025",
+    "accent": "rgba(98, 210, 195, 0.4)",
+    "image": "",
+    "tags": ["iOS", "SwiftUI", "Productivity", "FamilyControls", "ManagedSettings", "Shortcuts"],
+    "links": {
+      "demo": "projects/disconeck-ios-productivity-app.html",
+      "repo": "https://github.com"
+    }
+  },
+  {
+    "title": "DIVYBOT (Dividend, Investment, Value, Yield, Based, Optimized, Trading)",
+    "description": "Developed a stock trading bot in Python which used libraries such as pandas, yfinance, alpaca-py, and numpy to calculate and optimize stock distributions based on dividend growth, FCFE, and 200-day SMA comparison. Implemented financial algorithms to assess stock performance and optimize portfolio allocation, incorporating metrics like dividend yield and free cash flow to equity (FCFE). Currently testing using Alpaca API paper trading.",
+    "year": "2024",
+    "accent": "rgba(244, 180, 112, 0.45)",
+    "image": "",
+    "tags": ["Python", "Trading Bot", "Finance", "Pandas", "yfinance", "Alpaca API"],
+    "links": {
+      "demo": "projects/divybot-dividend-investment-value-yield-based-optimized-trading.html",
+      "repo": "https://github.com"
+    }
+  },
+  {
+    "title": "StudyHub",
+    "description": "Led the development of StudyHub, an iOS app designed to connect students, plan group study, and locate friends. Integrated with Canvas API to sync user’s classes and schedules, facilitating effective study session planning. Designed user-friendly interfaces to enhance user experience and engagement using swift.",
+    "year": "2024",
+    "accent": "rgba(141, 190, 255, 0.35)",
+    "image": "",
+    "tags": ["iOS", "Swift", "Education", "Canvas API", "UI/UX"],
+    "links": {
+      "demo": "projects/studyhub.html",
+      "repo": "https://github.com"
+    }
+  },
+  {
+    "title": "High Five Robot",
+    "description": "Designed and built a robot that used MediaPipe for gesture recognition to detect high fives using computer vision. Programmed servo controls to trigger a mechanical \"high five\" response when the hand was detected. Utilized Python and the MediaPipe Hands API for real-time hand tracking and gesture recognition. Used Onshape CAD software to design the robotic arm.",
+    "year": "2024",
+    "accent": "rgba(98, 210, 195, 0.3)",
+    "image": "",
+    "tags": ["Robotics", "Computer Vision", "Python", "MediaPipe", "CAD"],
+    "links": {
+      "demo": "projects/high-five-robot.html",
+      "repo": "https://github.com"
+    }
+  }
+]
