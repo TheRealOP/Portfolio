@@ -7,7 +7,7 @@
     "image": "",
     "tags": ["iOS", "SwiftUI", "Productivity", "FamilyControls", "ManagedSettings", "Shortcuts"],
     "links": {
-      "demo": "projects/disconeck-ios-productivity-app.html",
+      "demo": "projects/disconeck-ios-productivity-app/",
       "repo": "https://github.com"
     }
   },
@@ -19,7 +19,7 @@
     "image": "",
     "tags": ["Python", "Trading Bot", "Finance", "Pandas", "yfinance", "Alpaca API"],
     "links": {
-      "demo": "projects/divybot-dividend-investment-value-yield-based-optimized-trading.html",
+      "demo": "projects/divybot-dividend-investment-value-yield-based-optimized-trading/",
       "repo": "https://github.com"
     }
   },
@@ -31,7 +31,7 @@
     "image": "",
     "tags": ["iOS", "Swift", "Education", "Canvas API", "UI/UX"],
     "links": {
-      "demo": "projects/studyhub.html",
+      "demo": "projects/studyhub/",
       "repo": "https://github.com"
     }
   },
@@ -43,7 +43,7 @@
     "image": "",
     "tags": ["Robotics", "Computer Vision", "Python", "MediaPipe", "CAD"],
     "links": {
-      "demo": "projects/high-five-robot.html",
+      "demo": "projects/high-five-robot/",
       "repo": "https://github.com"
     }
   }

@@ -10,117 +10,109 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Specific styles for the homepage layout */
+        .container {
+            max-width: 1100px;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        h2 {
+            font-size: 2.2rem;
+        }
+        header, footer {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background: transparent;
+        }
+        .logo {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: block;
+            text-align: center;
+        }
+        .tiles {
+            display: block;
+            margin: 20px auto 0;
+        }
+        section > div {
+            background: transparent;
+            border: none;
+            padding: 20px;
+            border-radius: 0;
+            box-shadow: none;
+            margin: 0 auto 20px;
+            max-width: 800px;
+        }
+        section > div:last-child {
+            margin-bottom: 0;
+        }
+        #projects-list li a {
+            display: block;
+            padding: 8px 0;
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        #projects-list li a:hover {
+            color: var(--accent);
+        }
+        #projects-list li:last-child a {
+            border-bottom: none;
+        }
+        #experience a {
+            color: var(--text);
+        }
+        #experience a:hover {
+            color: var(--accent);
+        }
+    </style>
   </head>
   <body>
     <div class="ambient"></div>
-    <header class="nav-shell">
-      <nav class="nav">
-        <div class="logo">Ojas Polakhare</div>
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-        </div>
-        <a class="nav-cta" href="#projects">View Work</a>
-      </nav>
-    </header>
+    <div class="container">
+      <button id="theme-toggle">Toggle Theme</button>
 
-    <main>
-      <section class="hero" id="top">
-        <div class="hero-content">
-          <p class="eyebrow">this is a placeholder</p>
-          <h1>this is a placeholder</h1>
-          <p class="lead">
-            this is a placeholder
-          </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#projects">See the work</a>
+      <main>
+        <section class="tiles">
+          <div class="tile hero" id="top">
+            <h1>Ojas Polakhare</h1>
+            <p>Please hire me</p>
           </div>
-          <div class="hero-links">
-            <a href="mailto:hello@yourdomain.com">Email</a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
-          </div>
-          <div class="hero-metrics">
-            <div>
-              <span>this is a placeholder</span>
-              <p>this is a placeholder</p>
-            </div>
-            <div>
-              <span>this is a placeholder</span>
-              <p>this is a placeholder</p>
-            </div>
-            <div>
-              <span>this is a placeholder</span>
-              <p>this is a placeholder</p>
-            </div>
-          </div>
-        </div>
-        <div class="hero-panel">
-          <div class="panel-card">
-            <h3>this is a placeholder</h3>
-            <p>this is a placeholder</p>
-            <div class="panel-tags">
-this is a placeholder
-this is a placeholder
-this is a placeholder
-            </div>
-            <a class="panel-link" href="#projects">Browse projects</a>
-          </div>
-          <div class="panel-glow"></div>
-        </div>
-      </section>
 
-      <section class="section about" id="about">
-        <div class="section-header">
-          <p class="eyebrow">About</p>
-          <h2>this is a placeholder</h2>
-        </div>
-        <div class="about-grid">
-          <div class="about-card">
-            <h3>this is a placeholder</h3>
-            <p>
-              this is a placeholder
-            </p>
+          <div class="tile projects" id="projects">
+            <h2>Projects</h2>
+            <div id="projects-list">
+              <!-- Projects will be displayed here dynamically -->
+            </div>
           </div>
-          <div class="about-card">
-            <h3>this is a placeholder</h3>
+
+          <div class="tile experience" id="experience">
+            <h2>Experience</h2>
             <ul>
-this is a placeholder
-this is a placeholder
-this is a placeholder
+              <li><a href="experience/jv-programming-team/">Junior Varsity Programming Team — University of Central Florida</a></li>
+              <li><a href="experience/limb-ucf/">Undergraduate Research Assistant — LIMB@UCF</a></li>
             </ul>
           </div>
-          <div class="about-card">
-            <h3>this is a placeholder</h3>
-            <p>
-              this is a placeholder
-            </p>
+
+          <div class="tile about" id="about">
+            <h2>About / Misc</h2>
+            <p>Short bio, interests, or anything else you want to share.</p>
           </div>
-        </div>
-      </section>
-
-      <section class="section projects" id="projects">
-        <div class="section-header">
-          <p class="eyebrow">Projects</p>
-          <h2>this is a placeholder</h2>
-        </div>
-        <div class="interactive-timeline-wrapper">
-          <div class="project-display-area" id="project-display-area">
-            <!-- Project details will be loaded here -->
-          </div>
-          <div class="horizontal-timeline-container" id="horizontal-timeline-container">
-            <!-- Horizontal timeline items will be generated here -->
-          </div>
-        </div>
-      </section>
+        </section>
 
 
-    </main>
+      </main>
 
-    <footer class="footer">
-      <p>this is a placeholder</p>
-    </footer>
+      <footer>
+        <p>&copy; 2026 Ojas Polakhare. All rights reserved.</p>
+      </footer>
+    </div>
 
     <script src="script.js"></script>
   </body>
