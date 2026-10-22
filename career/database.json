@@ -77,6 +77,10 @@
     "akms-orchestrator": {
       "url": "https://github.com/TheRealOP/Agent-Knowledge-Management-System/blob/86d6f416a94b9e340279170683499923cde9eebe/src/akms/core/orchestrator.py",
       "note": "Inspected local source at commit 86d6f416a94b9e340279170683499923cde9eebe. Public repository and commit confirmed through connected GitHub."
+    },
+    "education-update": {
+      "url": "https://github.com/TheRealOP/Portfolio/blob/main/docs/provenance.md",
+      "note": "Explicit owner correction in chat, 2026-10-22: Computer Science major with a Robotics minor; supersedes double-major wording in the supplied resume."
     }
   },
   "projects": [
@@ -891,10 +895,11 @@
   "education": [
     {
       "id": "ucf-education",
-      "text": "University of Central Florida \u2014 BS double major: Computer Science and Mechanical Engineering; expected May 2027.",
+      "text": "University of Central Florida \u2014 BS in Computer Science with a minor in Robotics; expected May 2027.",
       "status": "user_confirmed",
       "approved": true,
       "sources": [
+        "education-update",
         "resume"
       ]
     }
