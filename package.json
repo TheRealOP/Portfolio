@@ -1,0 +1,15 @@
+{
+  "name": "ojas-career-platform",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test",
+    "dev": "node scripts/server.mjs",
+    "resume": "node scripts/resume.mjs",
+    "intake": "node scripts/intake.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

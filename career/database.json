@@ -1,0 +1,1279 @@
+{
+  "schemaVersion": 1,
+  "profile": {
+    "name": {
+      "id": "name",
+      "text": "Ojas Polakhare",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "brief"
+      ]
+    },
+    "summary": {
+      "id": "interests",
+      "text": "Interested in AI/ML research, research engineering, software engineering, and autonomous agents.",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "brief"
+      ]
+    },
+    "github": {
+      "id": "github",
+      "text": "https://github.com/TheRealOP",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "brief"
+      ]
+    }
+  },
+  "sources": {
+    "brief": {
+      "url": "https://github.com/TheRealOP/Portfolio",
+      "note": "Owner mission brief supplied 2026-10-22: name, interests, AKMS approval, publication restrictions."
+    },
+    "resume": {
+      "url": "https://github.com/TheRealOP/Portfolio/blob/main/docs/provenance.md",
+      "note": "Owner-supplied main.tex, 2026-10-22. Self-reported resume evidence; not independent validation."
+    },
+    "disconeck-ios-productivity-app": {
+      "url": "https://ojaspolakhare.com/projects/disconeck-ios-productivity-app/",
+      "note": "Previously published portfolio. Claims preserved as self-reported pending owner review."
+    },
+    "divybot-dividend-investment-value-yield-based-optimized-trading": {
+      "url": "https://ojaspolakhare.com/projects/divybot-dividend-investment-value-yield-based-optimized-trading/",
+      "note": "Previously published portfolio. Claims preserved as self-reported pending owner review."
+    },
+    "high-five-robot": {
+      "url": "https://ojaspolakhare.com/projects/high-five-robot/",
+      "note": "Previously published portfolio. Claims preserved as self-reported pending owner review."
+    },
+    "pi-photo-booth": {
+      "url": "https://ojaspolakhare.com/projects/pi-photo-booth/",
+      "note": "Previously published portfolio. Claims preserved as self-reported pending owner review."
+    },
+    "studyhub": {
+      "url": "https://ojaspolakhare.com/projects/studyhub/",
+      "note": "Previously published portfolio. Claims preserved as self-reported pending owner review."
+    },
+    "jv-programming-team": {
+      "url": "https://ojaspolakhare.com/experience/jv-programming-team/",
+      "note": "Existing public portfolio and supplied resume."
+    },
+    "limb-ucf": {
+      "url": "https://ojaspolakhare.com/experience/limb-ucf/",
+      "note": "Existing public portfolio and supplied resume."
+    },
+    "akms-readme": {
+      "url": "https://github.com/TheRealOP/Agent-Knowledge-Management-System/blob/86d6f416a94b9e340279170683499923cde9eebe/README.md",
+      "note": "Inspected local source at commit 86d6f416a94b9e340279170683499923cde9eebe. Public repository and commit confirmed through connected GitHub."
+    },
+    "akms-graph": {
+      "url": "https://github.com/TheRealOP/Agent-Knowledge-Management-System/blob/86d6f416a94b9e340279170683499923cde9eebe/src/akms/knowledge/graph.py",
+      "note": "Inspected local source at commit 86d6f416a94b9e340279170683499923cde9eebe. Public repository and commit confirmed through connected GitHub."
+    },
+    "akms-orchestrator": {
+      "url": "https://github.com/TheRealOP/Agent-Knowledge-Management-System/blob/86d6f416a94b9e340279170683499923cde9eebe/src/akms/core/orchestrator.py",
+      "note": "Inspected local source at commit 86d6f416a94b9e340279170683499923cde9eebe. Public repository and commit confirmed through connected GitHub."
+    }
+  },
+  "projects": [
+    {
+      "slug": "akms",
+      "title": "Agent Knowledge Management System (AKMS)",
+      "category": "ai-agents",
+      "lifecycle": "published",
+      "approved": true,
+      "approvalSource": "Explicit owner approval in mission brief, 2026-10-22.",
+      "repository": "https://github.com/TheRealOP/Agent-Knowledge-Management-System",
+      "skills": [
+        {
+          "id": "akms-skill-0",
+          "text": "Python",
+          "status": "verified",
+          "approved": true,
+          "sources": [
+            "akms-graph"
+          ]
+        },
+        {
+          "id": "akms-skill-1",
+          "text": "SQLite",
+          "status": "verified",
+          "approved": true,
+          "sources": [
+            "akms-graph"
+          ]
+        },
+        {
+          "id": "akms-skill-2",
+          "text": "AI agents",
+          "status": "verified",
+          "approved": true,
+          "sources": [
+            "akms-readme"
+          ]
+        },
+        {
+          "id": "akms-skill-3",
+          "text": "Knowledge management",
+          "status": "verified",
+          "approved": true,
+          "sources": [
+            "akms-readme"
+          ]
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "id": "akms-0",
+            "text": "A Python library for persistent agent knowledge, with a command-line interface and interchangeable model providers.",
+            "status": "verified",
+            "approved": true,
+            "sources": [
+              "akms-readme"
+            ]
+          }
+        ],
+        "motivation": [],
+        "contributions": [],
+        "architecture": [
+          {
+            "id": "akms-1",
+            "text": "HybridGraph coordinates Markdown wiki files with a SQLite index. Nodes and links can be synchronized and searched.",
+            "status": "verified",
+            "approved": true,
+            "sources": [
+              "akms-graph"
+            ]
+          },
+          {
+            "id": "akms-2",
+            "text": "The orchestrator caches section experts and splits large knowledge sections according to a configurable token threshold.",
+            "status": "verified",
+            "approved": true,
+            "sources": [
+              "akms-orchestrator"
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "id": "akms-3",
+            "text": "Markdown stores knowledge content while SQLite provides a derived searchable index.",
+            "status": "verified",
+            "approved": true,
+            "sources": [
+              "akms-graph"
+            ]
+          }
+        ],
+        "challenges": [],
+        "results": [],
+        "limitations": [],
+        "lessons": []
+      },
+      "questions": [
+        "What persistent-memory problem motivated AKMS, and which agent workflows have you tried?",
+        "Which HybridGraph, orchestrator, provider, or CLI components did you personally implement?",
+        "Why choose Markdown plus a derived SQLite index, and how are conflicting edits handled?",
+        "What limits have you observed with expert splitting and context retention, and what evidence supports them?",
+        "What reproducible tests, benchmarks, or demonstrations establish results, and what would you change?"
+      ]
+    },
+    {
+      "slug": "disconeck-ios-productivity-app",
+      "title": "DiscoNeck \u2013 iOS Productivity App",
+      "category": "software",
+      "lifecycle": "published",
+      "approved": true,
+      "approvalSource": "Previously published portfolio; mission requests preservation.",
+      "skills": [
+        {
+          "id": "disconeck-ios-productivity-app-skill-0",
+          "text": "iOS",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "disconeck-ios-productivity-app"
+          ]
+        },
+        {
+          "id": "disconeck-ios-productivity-app-skill-1",
+          "text": "SwiftUI",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "disconeck-ios-productivity-app"
+          ]
+        },
+        {
+          "id": "disconeck-ios-productivity-app-skill-2",
+          "text": "Productivity",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "disconeck-ios-productivity-app"
+          ]
+        },
+        {
+          "id": "disconeck-ios-productivity-app-skill-3",
+          "text": "FamilyControls",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "disconeck-ios-productivity-app"
+          ]
+        },
+        {
+          "id": "disconeck-ios-productivity-app-skill-4",
+          "text": "ManagedSettings",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "disconeck-ios-productivity-app"
+          ]
+        },
+        {
+          "id": "disconeck-ios-productivity-app-skill-5",
+          "text": "Shortcuts",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "disconeck-ios-productivity-app"
+          ]
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "id": "disconeck-ios-productivity-app-overview",
+            "text": "Developing an iOS app using SwiftUI, FamilyControls, and ManagedSettings APIs to block distracting apps. Implemented app blocking groups with persistence, edit/create flows, and Shortcuts integration for automation. Focused on improving digital well-being by automating phone use boundaries.",
+            "status": "user_confirmed",
+            "approved": true,
+            "sources": [
+              "resume",
+              "disconeck-ios-productivity-app"
+            ]
+          }
+        ],
+        "motivation": [],
+        "contributions": [],
+        "architecture": [],
+        "decisions": [],
+        "challenges": [],
+        "results": [],
+        "limitations": [],
+        "lessons": []
+      },
+      "questions": [
+        "Who is DiscoNeck for, and what distraction-blocking problem motivated it?",
+        "Which SwiftUI, FamilyControls, and ManagedSettings flows did you implement personally?",
+        "How are app-blocking groups persisted and synchronized with Shortcuts?",
+        "What entitlement, authorization, or background-execution challenges did you encounter?",
+        "Which features run on a device today, and what usage evidence and limitations can you share?"
+      ],
+      "repository": null
+    },
+    {
+      "slug": "divybot-dividend-investment-value-yield-based-optimized-trading",
+      "title": "DIVYBOT (Dividend, Investment, Value, Yield, Based, Optimized, Trading)",
+      "category": "software",
+      "lifecycle": "published",
+      "approved": true,
+      "approvalSource": "Previously published portfolio; mission requests preservation.",
+      "skills": [
+        {
+          "id": "divybot-dividend-investment-value-yield-based-optimized-trading-skill-0",
+          "text": "Python",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "divybot-dividend-investment-value-yield-based-optimized-trading"
+          ]
+        },
+        {
+          "id": "divybot-dividend-investment-value-yield-based-optimized-trading-skill-1",
+          "text": "Trading Bot",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "divybot-dividend-investment-value-yield-based-optimized-trading"
+          ]
+        },
+        {
+          "id": "divybot-dividend-investment-value-yield-based-optimized-trading-skill-2",
+          "text": "Finance",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "divybot-dividend-investment-value-yield-based-optimized-trading"
+          ]
+        },
+        {
+          "id": "divybot-dividend-investment-value-yield-based-optimized-trading-skill-3",
+          "text": "Pandas",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "divybot-dividend-investment-value-yield-based-optimized-trading"
+          ]
+        },
+        {
+          "id": "divybot-dividend-investment-value-yield-based-optimized-trading-skill-4",
+          "text": "yfinance",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "divybot-dividend-investment-value-yield-based-optimized-trading"
+          ]
+        },
+        {
+          "id": "divybot-dividend-investment-value-yield-based-optimized-trading-skill-5",
+          "text": "Alpaca API",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "divybot-dividend-investment-value-yield-based-optimized-trading"
+          ]
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "id": "divybot-dividend-investment-value-yield-based-optimized-trading-overview",
+            "text": "Developed a stock trading bot in Python which used libraries such as pandas, yfinance, alpaca-py, and numpy to calculate and optimize stock distributions based on dividend growth, FCFE, and 200-day SMA comparison. Implemented financial algorithms to assess stock performance and optimize portfolio allocation, incorporating metrics like dividend yield and free cash flow to equity (FCFE). Currently testing using Alpaca API paper trading.",
+            "status": "user_confirmed",
+            "approved": true,
+            "sources": [
+              "resume",
+              "divybot-dividend-investment-value-yield-based-optimized-trading"
+            ]
+          }
+        ],
+        "motivation": [],
+        "contributions": [],
+        "architecture": [],
+        "decisions": [],
+        "challenges": [],
+        "results": [],
+        "limitations": [],
+        "lessons": []
+      },
+      "questions": [
+        "What investment-allocation problem motivated DIVYBOT?",
+        "Which financial algorithms, data pipelines, and Alpaca integration did you implement personally?",
+        "How do dividend growth, FCFE and 200-day SMA affect allocation, and why?",
+        "How did you handle missing market data, API failures and paper-trading constraints?",
+        "What reproducible paper-trading or backtest evidence exists, and what assumptions limit the results?"
+      ],
+      "repository": null
+    },
+    {
+      "slug": "high-five-robot",
+      "title": "High Five Robot",
+      "category": "robotics",
+      "lifecycle": "published",
+      "approved": true,
+      "approvalSource": "Previously published portfolio; mission requests preservation.",
+      "skills": [
+        {
+          "id": "high-five-robot-skill-0",
+          "text": "Robotics",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "high-five-robot"
+          ]
+        },
+        {
+          "id": "high-five-robot-skill-1",
+          "text": "Computer Vision",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "high-five-robot"
+          ]
+        },
+        {
+          "id": "high-five-robot-skill-2",
+          "text": "Python",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "high-five-robot"
+          ]
+        },
+        {
+          "id": "high-five-robot-skill-3",
+          "text": "MediaPipe",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "high-five-robot"
+          ]
+        },
+        {
+          "id": "high-five-robot-skill-4",
+          "text": "CAD",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume",
+            "high-five-robot"
+          ]
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "id": "high-five-robot-overview",
+            "text": "Designed and built a robot that used MediaPipe for gesture recognition to detect high fives using computer vision. Programmed servo controls to trigger a mechanical \"high five\" response when the hand was detected. Utilized Python and the MediaPipe Hands API for real-time hand tracking and gesture recognition. Used Onshape CAD software to design the robotic arm.",
+            "status": "user_confirmed",
+            "approved": true,
+            "sources": [
+              "resume",
+              "high-five-robot"
+            ]
+          }
+        ],
+        "motivation": [],
+        "contributions": [],
+        "architecture": [],
+        "decisions": [],
+        "challenges": [],
+        "results": [],
+        "limitations": [],
+        "lessons": []
+      },
+      "questions": [
+        "What motivated the high-five robot, and where was it demonstrated?",
+        "Which gesture-recognition, servo-control and CAD work did you personally complete?",
+        "How are MediaPipe hand detections converted into a mechanical response?",
+        "What calibration, false-detection, mechanical or latency problems arose?",
+        "What tests or demonstrations show reliable behavior, and what design changes would you make?"
+      ],
+      "repository": null
+    },
+    {
+      "slug": "pi-photo-booth",
+      "title": "Raspberry Pi Photo Booth",
+      "category": "software",
+      "lifecycle": "published",
+      "approved": true,
+      "approvalSource": "Previously published portfolio; mission requests preservation.",
+      "skills": [
+        {
+          "id": "pi-photo-booth-skill-0",
+          "text": "Raspberry Pi",
+          "status": "needs_review",
+          "approved": true,
+          "sources": [
+            "pi-photo-booth"
+          ]
+        },
+        {
+          "id": "pi-photo-booth-skill-1",
+          "text": "Embedded Systems",
+          "status": "needs_review",
+          "approved": true,
+          "sources": [
+            "pi-photo-booth"
+          ]
+        },
+        {
+          "id": "pi-photo-booth-skill-2",
+          "text": "Python",
+          "status": "needs_review",
+          "approved": true,
+          "sources": [
+            "pi-photo-booth"
+          ]
+        },
+        {
+          "id": "pi-photo-booth-skill-3",
+          "text": "Bluetooth",
+          "status": "needs_review",
+          "approved": true,
+          "sources": [
+            "pi-photo-booth"
+          ]
+        },
+        {
+          "id": "pi-photo-booth-skill-4",
+          "text": "BLE",
+          "status": "needs_review",
+          "approved": true,
+          "sources": [
+            "pi-photo-booth"
+          ]
+        },
+        {
+          "id": "pi-photo-booth-skill-5",
+          "text": "Web Bluetooth",
+          "status": "needs_review",
+          "approved": true,
+          "sources": [
+            "pi-photo-booth"
+          ]
+        },
+        {
+          "id": "pi-photo-booth-skill-6",
+          "text": "Linux",
+          "status": "needs_review",
+          "approved": true,
+          "sources": [
+            "pi-photo-booth"
+          ]
+        },
+        {
+          "id": "pi-photo-booth-skill-7",
+          "text": "systemd",
+          "status": "needs_review",
+          "approved": true,
+          "sources": [
+            "pi-photo-booth"
+          ]
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "id": "pi-photo-booth-overview",
+            "text": "Engineered a comprehensive Raspberry Pi-based photo booth application, addressing embedded systems constraints while integrating camera hardware with Python services for image capture, collage generation, and session management. Implemented a dual-path printing flow with a Web Bluetooth kiosk interface for Instax Mini Link 3 printers plus a native BLE workflow using the bleak library for production reliability. Strengthened the experience with thorough error handling, fault tolerance, and systemd autostart for unattended public deployment, demonstrating full-stack expertise across embedded Linux, Bluetooth protocols, and scalable application architecture.",
+            "status": "needs_review",
+            "approved": true,
+            "sources": [
+              "pi-photo-booth"
+            ]
+          }
+        ],
+        "motivation": [],
+        "contributions": [],
+        "architecture": [],
+        "decisions": [],
+        "challenges": [],
+        "results": [],
+        "limitations": [],
+        "lessons": []
+      },
+      "questions": [
+        "Who uses the photo booth, and what unattended-deployment problem motivated it?",
+        "Which camera, collage, session, BLE and kiosk components did you implement yourself?",
+        "Why retain Web Bluetooth and native bleak printing paths, and how do they interact?",
+        "What printer compatibility, Linux service and recovery failures did you solve?",
+        "What documented deployment tests, screenshots and limitations can support the case study?"
+      ],
+      "repository": "https://github.com/TheRealOP/pi-photo-booth"
+    },
+    {
+      "slug": "studyhub",
+      "title": "StudyHub",
+      "category": "software",
+      "lifecycle": "published",
+      "approved": true,
+      "approvalSource": "Previously published portfolio; mission requests preservation.",
+      "skills": [
+        {
+          "id": "studyhub-skill-0",
+          "text": "iOS",
+          "status": "needs_review",
+          "approved": true,
+          "sources": [
+            "studyhub"
+          ]
+        },
+        {
+          "id": "studyhub-skill-1",
+          "text": "Swift",
+          "status": "needs_review",
+          "approved": true,
+          "sources": [
+            "studyhub"
+          ]
+        },
+        {
+          "id": "studyhub-skill-2",
+          "text": "Education",
+          "status": "needs_review",
+          "approved": true,
+          "sources": [
+            "studyhub"
+          ]
+        },
+        {
+          "id": "studyhub-skill-3",
+          "text": "Canvas API",
+          "status": "needs_review",
+          "approved": true,
+          "sources": [
+            "studyhub"
+          ]
+        },
+        {
+          "id": "studyhub-skill-4",
+          "text": "UI/UX",
+          "status": "needs_review",
+          "approved": true,
+          "sources": [
+            "studyhub"
+          ]
+        }
+      ],
+      "sections": {
+        "overview": [
+          {
+            "id": "studyhub-overview",
+            "text": "Led the development of StudyHub, an iOS app designed to connect students, plan group study, and locate friends. Integrated with Canvas API to sync user\u2019s classes and schedules, facilitating effective study session planning. Designed user-friendly interfaces to enhance user experience and engagement using swift.",
+            "status": "needs_review",
+            "approved": true,
+            "sources": [
+              "studyhub"
+            ]
+          }
+        ],
+        "motivation": [],
+        "contributions": [],
+        "architecture": [],
+        "decisions": [],
+        "challenges": [],
+        "results": [],
+        "limitations": [],
+        "lessons": []
+      },
+      "questions": [
+        "Which student study-planning problem motivated StudyHub?",
+        "What was your individual role, and which Swift interfaces and integrations did you implement?",
+        "How does Canvas class and schedule synchronization support study sessions?",
+        "What authentication, scheduling or location challenges did you encounter?",
+        "Which features were tested with students, and what evidence and lessons can you share?"
+      ],
+      "repository": null
+    }
+  ],
+  "experience": [
+    {
+      "slug": "jv-programming-team",
+      "title": "Junior Varsity Programming Team \u2014 University of Central Florida",
+      "approved": true,
+      "claims": [
+        {
+          "id": "jv-programming-team-0",
+          "text": "Applied advanced data structures such as hash tables and Fenwick trees to enhance problem-solving strategies.",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "jv-programming-team-1",
+          "text": "Developed dynamic programming and graph theory solutions, using brute force methods to generate extra test cases.",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "jv-programming-team-2",
+          "text": "Implemented algorithms in C++, Java, and Python to optimize performance and implementation speed.",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "jv-programming-team-3",
+          "text": "Refined skills through rigorous training while maintaining team morale during five-hour contests.",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "jv-programming-team-4",
+          "text": "Strategically divided problems based on team strengths and collaborated on difficult problems to develop optimal solutions.",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "id": "jv-programming-team-skill-0",
+          "text": "Data Structures",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "jv-programming-team-skill-1",
+          "text": "Algorithms",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "jv-programming-team-skill-2",
+          "text": "C++",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "jv-programming-team-skill-3",
+          "text": "Java",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "jv-programming-team-skill-4",
+          "text": "Python",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "limb-ucf",
+      "title": "Undergraduate Research Assistant \u2014 LIMB@UCF",
+      "approved": true,
+      "claims": [
+        {
+          "id": "limb-ucf-0",
+          "text": "Modeled a project focused on neurosensory feedback and electrical stimulation.",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "limb-ucf-1",
+          "text": "Developed 12+ Python scripts to replicate an experiment from a Nature paper.",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "limb-ucf-2",
+          "text": "Designed a custom non-rectangular waveform generator using NumPy, pandas, and Matplotlib.",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "limb-ucf-3",
+          "text": "Created an electrical stimulator and data acquisition board interface using MCCULW.",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "limb-ucf-4",
+          "text": "Designed a UI for neurosensory feedback with PsychoPy and implemented an EEG interface for the TMSI headcap.",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        }
+      ],
+      "skills": [
+        {
+          "id": "limb-ucf-skill-0",
+          "text": "Python",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "limb-ucf-skill-1",
+          "text": "NumPy",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "limb-ucf-skill-2",
+          "text": "pandas",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "limb-ucf-skill-3",
+          "text": "Matplotlib",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "limb-ucf-skill-4",
+          "text": "PsychoPy",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "limb-ucf-skill-5",
+          "text": "MCCULW",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        },
+        {
+          "id": "limb-ucf-skill-6",
+          "text": "EEG",
+          "status": "user_confirmed",
+          "approved": true,
+          "sources": [
+            "resume"
+          ]
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "ucf-education",
+      "text": "University of Central Florida \u2014 BS double major: Computer Science and Mechanical Engineering; expected May 2027.",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "resume"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill-0",
+      "text": "Python",
+      "status": "verified",
+      "approved": true,
+      "sources": [
+        "akms-graph",
+        "divybot-dividend-investment-value-yield-based-optimized-trading",
+        "high-five-robot",
+        "pi-photo-booth",
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-1",
+      "text": "SQLite",
+      "status": "verified",
+      "approved": true,
+      "sources": [
+        "akms-graph"
+      ]
+    },
+    {
+      "id": "skill-2",
+      "text": "AI agents",
+      "status": "verified",
+      "approved": true,
+      "sources": [
+        "akms-readme"
+      ]
+    },
+    {
+      "id": "skill-3",
+      "text": "Knowledge management",
+      "status": "verified",
+      "approved": true,
+      "sources": [
+        "akms-readme"
+      ]
+    },
+    {
+      "id": "skill-4",
+      "text": "iOS",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "disconeck-ios-productivity-app",
+        "resume",
+        "studyhub"
+      ]
+    },
+    {
+      "id": "skill-5",
+      "text": "SwiftUI",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "disconeck-ios-productivity-app",
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-6",
+      "text": "Productivity",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "disconeck-ios-productivity-app",
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-7",
+      "text": "FamilyControls",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "disconeck-ios-productivity-app",
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-8",
+      "text": "ManagedSettings",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "disconeck-ios-productivity-app",
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-9",
+      "text": "Shortcuts",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "disconeck-ios-productivity-app",
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-10",
+      "text": "Trading Bot",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "divybot-dividend-investment-value-yield-based-optimized-trading",
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-11",
+      "text": "Finance",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "divybot-dividend-investment-value-yield-based-optimized-trading",
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-12",
+      "text": "Pandas",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "divybot-dividend-investment-value-yield-based-optimized-trading",
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-13",
+      "text": "yfinance",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "divybot-dividend-investment-value-yield-based-optimized-trading",
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-14",
+      "text": "Alpaca API",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "divybot-dividend-investment-value-yield-based-optimized-trading",
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-15",
+      "text": "Robotics",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "high-five-robot",
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-16",
+      "text": "Computer Vision",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "high-five-robot",
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-17",
+      "text": "MediaPipe",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "high-five-robot",
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-18",
+      "text": "CAD",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "high-five-robot",
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-19",
+      "text": "Raspberry Pi",
+      "status": "needs_review",
+      "approved": true,
+      "sources": [
+        "pi-photo-booth"
+      ]
+    },
+    {
+      "id": "skill-20",
+      "text": "Embedded Systems",
+      "status": "needs_review",
+      "approved": true,
+      "sources": [
+        "pi-photo-booth"
+      ]
+    },
+    {
+      "id": "skill-21",
+      "text": "Bluetooth",
+      "status": "needs_review",
+      "approved": true,
+      "sources": [
+        "pi-photo-booth"
+      ]
+    },
+    {
+      "id": "skill-22",
+      "text": "BLE",
+      "status": "needs_review",
+      "approved": true,
+      "sources": [
+        "pi-photo-booth"
+      ]
+    },
+    {
+      "id": "skill-23",
+      "text": "Web Bluetooth",
+      "status": "needs_review",
+      "approved": true,
+      "sources": [
+        "pi-photo-booth"
+      ]
+    },
+    {
+      "id": "skill-24",
+      "text": "Linux",
+      "status": "needs_review",
+      "approved": true,
+      "sources": [
+        "pi-photo-booth"
+      ]
+    },
+    {
+      "id": "skill-25",
+      "text": "systemd",
+      "status": "needs_review",
+      "approved": true,
+      "sources": [
+        "pi-photo-booth"
+      ]
+    },
+    {
+      "id": "skill-26",
+      "text": "Swift",
+      "status": "needs_review",
+      "approved": true,
+      "sources": [
+        "studyhub"
+      ]
+    },
+    {
+      "id": "skill-27",
+      "text": "Education",
+      "status": "needs_review",
+      "approved": true,
+      "sources": [
+        "studyhub"
+      ]
+    },
+    {
+      "id": "skill-28",
+      "text": "Canvas API",
+      "status": "needs_review",
+      "approved": true,
+      "sources": [
+        "studyhub"
+      ]
+    },
+    {
+      "id": "skill-29",
+      "text": "UI/UX",
+      "status": "needs_review",
+      "approved": true,
+      "sources": [
+        "studyhub"
+      ]
+    },
+    {
+      "id": "skill-30",
+      "text": "Data Structures",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-31",
+      "text": "Algorithms",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-32",
+      "text": "C++",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-33",
+      "text": "Java",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-34",
+      "text": "NumPy",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-35",
+      "text": "Matplotlib",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-36",
+      "text": "PsychoPy",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-37",
+      "text": "MCCULW",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "resume"
+      ]
+    },
+    {
+      "id": "skill-38",
+      "text": "EEG",
+      "status": "user_confirmed",
+      "approved": true,
+      "sources": [
+        "resume"
+      ]
+    }
+  ],
+  "exclusions": [
+    "orbit",
+    "orbits"
+  ]
+}

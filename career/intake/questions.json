@@ -1,0 +1,44 @@
+{
+  "akms": [
+    "What persistent-memory problem motivated AKMS, and which agent workflows have you tried?",
+    "Which HybridGraph, orchestrator, provider, or CLI components did you personally implement?",
+    "Why choose Markdown plus a derived SQLite index, and how are conflicting edits handled?",
+    "What limits have you observed with expert splitting and context retention, and what evidence supports them?",
+    "What reproducible tests, benchmarks, or demonstrations establish results, and what would you change?"
+  ],
+  "disconeck-ios-productivity-app": [
+    "Who is DiscoNeck for, and what distraction-blocking problem motivated it?",
+    "Which SwiftUI, FamilyControls, and ManagedSettings flows did you implement personally?",
+    "How are app-blocking groups persisted and synchronized with Shortcuts?",
+    "What entitlement, authorization, or background-execution challenges did you encounter?",
+    "Which features run on a device today, and what usage evidence and limitations can you share?"
+  ],
+  "divybot-dividend-investment-value-yield-based-optimized-trading": [
+    "What investment-allocation problem motivated DIVYBOT?",
+    "Which financial algorithms, data pipelines, and Alpaca integration did you implement personally?",
+    "How do dividend growth, FCFE and 200-day SMA affect allocation, and why?",
+    "How did you handle missing market data, API failures and paper-trading constraints?",
+    "What reproducible paper-trading or backtest evidence exists, and what assumptions limit the results?"
+  ],
+  "high-five-robot": [
+    "What motivated the high-five robot, and where was it demonstrated?",
+    "Which gesture-recognition, servo-control and CAD work did you personally complete?",
+    "How are MediaPipe hand detections converted into a mechanical response?",
+    "What calibration, false-detection, mechanical or latency problems arose?",
+    "What tests or demonstrations show reliable behavior, and what design changes would you make?"
+  ],
+  "pi-photo-booth": [
+    "Who uses the photo booth, and what unattended-deployment problem motivated it?",
+    "Which camera, collage, session, BLE and kiosk components did you implement yourself?",
+    "Why retain Web Bluetooth and native bleak printing paths, and how do they interact?",
+    "What printer compatibility, Linux service and recovery failures did you solve?",
+    "What documented deployment tests, screenshots and limitations can support the case study?"
+  ],
+  "studyhub": [
+    "Which student study-planning problem motivated StudyHub?",
+    "What was your individual role, and which Swift interfaces and integrations did you implement?",
+    "How does Canvas class and schedule synchronization support study sessions?",
+    "What authentication, scheduling or location challenges did you encounter?",
+    "Which features were tested with students, and what evidence and lessons can you share?"
+  ]
+}
