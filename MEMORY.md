@@ -24,3 +24,13 @@ This file serves as a working memory for the project, documenting key decisions,
 ## Workflow Notes:
 - Projects tab: add a new folder under `projects/` with an `index.html` page matching the existing project template, then add a new list item in `index.html` under the Projects section.
 - Experience tab: add a new folder under `experience/` with an `index.html` page matching the existing experience template, then add a new list item in `index.html` under the Experience section.
+
+## 2026-10-22 — Codex career platform upgrade
+- Audited the static repository and confirmed legacy GitHub Pages main-root hosting through GitHub.
+- Implemented career/database.json as content source; strict public projection and explicit publication gates.
+- Retained the warm visual identity while improving generated project cards, navigation, case studies, responsiveness and accessibility.
+- Added static career JSON, optional filtered Node/Worker API, native document.modelContext WebMCP tools and llms.txt.
+- Added public-only repository intake and owner-answer review scripts; new records remain unapproved.
+- Owner supplied main.tex; styling extracted into resume/template.tex, personal original retained only in ignored local output. Resume generation enforces exactly one page and no overflow.
+- Automated tests, built site, browser evidence form/WebMCP detection, and rendered one-page resume verified. See docs/audit.md and README.md for operational setup and review boundaries.
+- Supersedes historical projects.json/timeline instructions above: edit the career database, run npm run build, deploy only dist. No live deployment or automatic project approval.

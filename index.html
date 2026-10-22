@@ -1,123 +1,60 @@
-<!DOCTYPE html>
+<!-- Build template: npm run build. Serve dist/, not the repository root. -->
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ojas Polakhare | Portfolio</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{TITLE}} | Ojas Polakhare</title>
+    <meta name="description" content="{{DESCRIPTION}}" />
+    <link rel="canonical" href="{{URL}}" />
+    <meta property="og:title" content="{{TITLE}}" />
+    <meta property="og:description" content="{{DESCRIPTION}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{URL}}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Syne:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Syne:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Specific styles for the homepage layout */
-        .container {
-            max-width: 1100px;
-        }
-        h1 {
-            font-size: 3rem;
-        }
-        h2 {
-            font-size: 2.2rem;
-        }
-        header, footer {
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            background: transparent;
-        }
-        .logo {
-            color: var(--primary);
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            display: block;
-            text-align: center;
-        }
-        .tiles {
-            display: block;
-            margin: 20px auto 0;
-        }
-        section > div {
-            background: transparent;
-            border: none;
-            padding: 20px;
-            border-radius: 0;
-            box-shadow: none;
-            margin: 0 auto 20px;
-            max-width: 800px;
-        }
-        section > div:last-child {
-            margin-bottom: 0;
-        }
-        #projects-list li a {
-            display: block;
-            padding: 8px 0;
-            color: var(--text);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        #projects-list li a:hover {
-            color: var(--accent);
-        }
-        #projects-list li:last-child a {
-            border-bottom: none;
-        }
-        #experience a {
-            color: var(--text);
-        }
-        #experience a:hover {
-            color: var(--accent);
-        }
-    </style>
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      rel="alternate"
+      type="application/json"
+      href="/api/career/public.json"
+      title="Career knowledge base"
+    />
+    <script type="application/ld+json">
+      {{JSONLD}}
+    </script>
+    <script defer src="/script.js"></script>
+    <script type="module" src="/agent-tools.js"></script>
   </head>
   <body>
-    <div class="ambient"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="container">
-      <button id="theme-toggle">Toggle Theme</button>
-
-      <main>
-        <section class="tiles">
-          <div class="tile hero" id="top">
-            <h1>Ojas Polakhare</h1>
-            <p>Please hire me</p>
-          </div>
-
-          <div class="tile projects" id="projects">
-            <h2>Projects</h2>
-            <ul id="projects-list">
-              <li><a href="projects/disconeck-ios-productivity-app/">DiscoNeck – iOS Productivity App</a></li>
-              <li><a href="projects/divybot-dividend-investment-value-yield-based-optimized-trading/">DIVYBOT (Dividend, Investment, Value, Yield, Based, Optimized, Trading)</a></li>
-              <li><a href="projects/studyhub/">StudyHub</a></li>
-              <li><a href="projects/high-five-robot/">High Five Robot</a></li>
-              <li><a href="projects/pi-photo-booth/">Raspberry Pi Photo Booth Application</a></li>
-            </ul>
-          </div>
-
-          <div class="tile experience" id="experience">
-            <h2>Experience</h2>
-            <ul>
-              <li><a href="experience/jv-programming-team/">Junior Varsity Programming Team — University of Central Florida</a></li>
-              <li><a href="experience/limb-ucf/">Undergraduate Research Assistant — LIMB@UCF</a></li>
-            </ul>
-          </div>
-
-          <div class="tile about" id="about">
-            <h2>About / Misc</h2>
-            <p>Short bio, interests, or anything else you want to share.</p>
-          </div>
-        </section>
-
-
-      </main>
-
+      <header>
+        <a href="/" class="wordmark">OP<span> / portfolio</span></a>
+        <nav aria-label="Main navigation">
+          <a href="/#projects">Projects</a><a href="/#experience">Experience</a
+          ><a href="/resume/">Resume</a
+          ><button
+            id="theme-toggle"
+            type="button"
+            aria-label="Change color theme"
+          >
+            Theme
+          </button>
+        </nav>
+      </header>
+      <main id="main">{{BODY}}</main>
       <footer>
-        <p>&copy; 2026 Ojas Polakhare. All rights reserved.</p>
+        <p>
+          © 2026 Ojas Polakhare ·
+          <a href="https://github.com/TheRealOP">GitHub</a> ·
+          <a href="/agents/">For AI agents</a>
+        </p>
       </footer>
     </div>
-
-    <script src="script.js"></script>
   </body>
 </html>

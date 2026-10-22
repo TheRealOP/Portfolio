@@ -1,0 +1,34 @@
+name: Generate one-page resume
+on:
+  workflow_dispatch:
+    inputs:
+      job_description:
+        description: "Job description (used only for deterministic evidence ranking)"
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  resume:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install trusted compiler and PDF tools
+        run: sudo apt-get update && sudo apt-get install -y texlive-latex-extra texlive-fonts-extra poppler-utils
+      - name: Save job description as data
+        env:
+          JOB_DESCRIPTION: ${{ inputs.job_description }}
+        run: node -e "require('fs').writeFileSync('output-job.txt', process.env.JOB_DESCRIPTION)"
+      - run: node scripts/resume.mjs output-job.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reviewed-one-page-resume
+          path: |
+            output/resume/resume.pdf
+            output/resume/resume.tex
+            output/resume/preview.png
+            output/resume/evidence.json
+          retention-days: 7

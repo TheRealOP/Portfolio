@@ -1,22 +1,27 @@
-const themeToggle = document.querySelector("#theme-toggle");
-
+const toggle = document.querySelector("#theme-toggle");
 const applyTheme = (theme) => {
   document.body.classList.remove("light-theme", "dark-theme");
-  if (theme === "light" || theme === "dark") {
+  if (["light", "dark"].includes(theme))
     document.body.classList.add(`${theme}-theme`);
-  }
+  if (toggle)
+    toggle.setAttribute(
+      "aria-label",
+      `Switch to ${theme === "dark" || (!["light", "dark"].includes(theme) && matchMedia("(prefers-color-scheme: dark)").matches) ? "light" : "dark"} theme`,
+    );
 };
-
-const storedTheme = localStorage.getItem("theme");
-if (storedTheme) {
-  applyTheme(storedTheme);
+try {
+  applyTheme(localStorage.getItem("theme"));
+} catch {
+  /* Storage can be disabled. */
 }
-
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    const isDark = document.body.classList.contains("dark-theme");
-    const nextTheme = isDark ? "light" : "dark";
-    applyTheme(nextTheme);
-    localStorage.setItem("theme", nextTheme);
-  });
-}
+toggle?.addEventListener("click", () => {
+  const dark =
+    document.body.classList.contains("dark-theme") ||
+    (!document.body.classList.contains("light-theme") &&
+      matchMedia("(prefers-color-scheme: dark)").matches);
+  const next = dark ? "light" : "dark";
+  applyTheme(next);
+  try {
+    localStorage.setItem("theme", next);
+  } catch {}
+});

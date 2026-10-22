@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "repository": "TheRealOP/Agent-Knowledge-Management-System",
+  "slug": "akms",
+  "head": "86d6f416a94b9e340279170683499923cde9eebe",
+  "fingerprint": "462f16608b3a5a045b5db3df76989eb9668ae86c927f26620fc66a14afa3e11f",
+  "lifecycle": "discovered",
+  "approved": false,
+  "status": "needs_review",
+  "observations": {
+    "languages": [
+      "Python"
+    ],
+    "dependencies": [],
+    "sourceFiles": [
+      "src/akms/__init__.py",
+      "src/akms/agents/__init__.py",
+      "src/akms/agents/base.py",
+      "src/akms/agents/dev_sage.py",
+      "src/akms/agents/expert.py",
+      "src/akms/agents/librarian.py",
+      "src/akms/cli.py",
+      "src/akms/config.py",
+      "src/akms/core/__init__.py",
+      "src/akms/core/message.py",
+      "src/akms/core/multi_orchestrator.py",
+      "src/akms/core/orchestrator.py",
+      "src/akms/core/quota.py",
+      "src/akms/knowledge/__init__.py",
+      "src/akms/knowledge/db.py",
+      "src/akms/knowledge/graph.py",
+      "src/akms/knowledge/search.py",
+      "src/akms/knowledge/wiki.py",
+      "src/akms/logging/__init__.py",
+      "src/akms/logging/conversation_log.py",
+      "src/akms/mcp_server.py",
+      "src/akms/providers/__init__.py",
+      "src/akms/providers/_tmux.py",
+      "src/akms/providers/base.py",
+      "src/akms/providers/claude.py",
+      "src/akms/providers/cli_subprocess.py",
+      "src/akms/providers/deepseek.py",
+      "src/akms/providers/gemini.py",
+      "src/akms/providers/ollama.py",
+      "src/akms/providers/openai_provider.py"
+    ],
+    "sampledFiles": [
+      {
+        "path": "README.md",
+        "sha": "3ff983a805fe31cca5846af40c7df3a4b4faf698"
+      },
+      {
+        "path": "pyproject.toml",
+        "sha": "4e86ce40eaf3d469ae5ff99af4474d62cf1c303c"
+      },
+      {
+        "path": "src/akms/__init__.py",
+        "sha": "757d8c1cf3c973fdbeaa4a46d572caf7c0bcc739"
+      },
+      {
+        "path": "src/akms/agents/__init__.py",
+        "sha": "33f88cb6ac8c76703a87e39abe71c414d47b07cc"
+      },
+      {
+        "path": "src/akms/agents/base.py",
+        "sha": "2e5a78185f3fd853a06855a2a25b8225bd7f1e90"
+      },
+      {
+        "path": "src/akms/agents/dev_sage.py",
+        "sha": "012e5ceeb5c3c21924b52f68c50e7e5c4ce2d777"
+      },
+      {
+        "path": "src/akms/agents/expert.py",
+        "sha": "5a7a84b3e11177b4b0c0d6b15fe06ae8d25bd80c"
+      }
+    ],
+    "readmePresent": true
+  },
+  "untrustedReadme": {
+    "text": "# Agent Knowledge Management System (AKMS) \n\nv0.1.0\n\nA Python library that gives AI agents **persistent memory**. Knowledge is stored in a graph that grows across sessions. Any agent that can run a shell command can query it — no wrappers, no per-IDE integration code.\n\nWorks with Claude, GPT-4, Gemini, DeepSeek, or local Ollama models — swap providers without changing code.\n\n---\n\n## Quick Start (3 steps)\n\n### 1. Install\n\n```bash\npip install -e .\n```\n\n### 2. Create `akms_config.yaml`\n\nYou only need **one** API key to get started:\n\n```yaml\nproviders:\n  claude:\n    api_key: \"${CLAUDE_API_KEY}\"\n    models:\n      - claude-sonnet-4-6\n\nagent_assignments:\n  expert:     { provider: claude, model: claude-sonnet-4-6 }\n  librarian:  { provider: claude, model: claude-sonnet-4-6 }\n\nknowledge:\n  graph_dir: \"knowledge/graph\"\n  archives_dir: \"knowledge/archives\"\n  logs_dir: \"knowledge/logs\"\n  db_path: \"knowledge/akms.db\"\n```\n\n```bash\nexport CLAUDE_API_KEY=\"sk-ant-...\"\n```\n\n### 3. Initialize and start querying\n\n```bash\nakms init                          # create the knowledge/ directory\nakms ingest my-notes.md            # feed documents to the Librarian\nakms search \"consensus algorithms\" # search the graph\nakms ask \"distributed-systems\" \"How does Raft work?\"\n```\n\n---\n\n## Table of Contents\n\n- [How It Works](#how-it-works)\n- [CLI Reference](#cli-reference)\n- [Knowledge Graph](#knowledge-graph)\n- [The Three Roles](#the-three-roles)\n- [Configuration Reference](#configuration-reference)\n- [Provider Support](#provider-support)\n- [Python API](#python-api)\n- [Dynamic Expert Scaling](#dynamic-expert-scaling)\n- [Project Structure](#project-structure)\n\n---\n\n## How It Works\n\n```\nYour IDE agent (Agent 1)\n   │\n   ├── akms search \"query\"      ──► knowledge graph (SQLite index)\n   ├── akms ask \"section\" \"q\"   ──► Expert agent (pre-loaded section)\n   │                                   │\n   │                           fork/rollback per query\n   │                           (home state never mutated)\n   │\n   └── akms ingest doc.md       ──► Librarian agent ──► knowledge graph\n```\n\n1. **Agent 1** (your IDE agent) reads `agents.md` and calls `akms` commands as shell skills\n2. **Expert agents** pre-load knowledge sections into memory. Each query from Agent 1 creates a throwaway fork — answered and discarded. No context drift.\n3. **The Librarian** (Agent 3) reads documents and conversation logs, and adds nodes to the graph\n4. Every session leaves the graph richer for the next\n\n---\n\n## CLI Reference\n\n### `akms init`\n\nSet up the knowledge directory. Run once before anything else.\n\n```bash\nakms init\n```\n\nCreates `knowledge/graph/`, `knowledge/logs/`, `knowledge/archives/`, `knowledge/research_queue.md`.\n\n---\n\n### `akms ingest <file>`\n\nFeed a document into the knowledge graph. The Librarian reads it, chunks by heading, and creates nodes.\n\n```bash\nakms ingest papers/distributed-systems-primer.md\n```\n\n```\nIngesting: papers/distributed-systems-primer.md\nDone. 7 node(s) added to knowledge graph.\n```\n\n---\n\n### `akms search <query>`\n\nSearch the knowledge graph and return ranked results.\n\n```bash\nakms search \"consensus algorithms\"\nakms search \"leader election\" --top-k 5\nakms search \"Raft\" --json\n```\n\n---\n\n### `akms ask <section> <question>`\n\nRoute a question to the Expert agent for a section. The Expert pre-loads its section, answers via fork/rollback, and returns a compressed answer.\n\n```bash\nakms ask \"distributed-systems\" \"How does Raft handle leader election?\"\n```\n\n---\n\n### `akms get <section/node-id>`\n\nGet the full content of a specific node.\n\n```bash\nakms get distributed-systems/raft\nakms get distributed-systems/raft --json\n```\n\n---\n\n### `akms sections`\n\nList all available knowledge sections and node counts.\n\n```bash\nakms sections\nakms sections --json\n```\n\n---\n\n### `akms archive <section> <node-id> <reason>`\n\nArchive a node — moves it to `knowledge/archives/` with proper metadata. Never delete nodes directly.\n\n```bash\nakms archive \"distributed-systems\" \"old-raft-notes\" \"Superseded by raft-consensus node\"\n```\n\n---\n\n### `akms check`\n\nFind broken wikilinks across the knowledge graph.\n\n```bash\nakms check\nakms check --json\n```\n\n---\n\n### `akms status`\n\nShow configured providers and agent assignments.\n\n```bash\nakms status\n```\n\n---\n\n### `akms research`\n\nShow the research queue — knowledge gaps flagged by the Librarian.\n\n```bash\nakms research\n```\n\n---\n\n## Knowledge Graph\n\nThe graph lives in `knowledge/graph/` — a directory tree of markdown files, backed by SQLite for search.\n\n### Structure\n\n```\nknowledge/graph/\n├── distributed-systems/\n│   ├── _section.md          ← section overview\n│   ├── cap-theorem.md\n│   └── consensus.md\n└── machine-learning/\n    └── transformers.md\n```\n\n### Node format\n\n```markdown\n---\nid: cap-theorem\nsection: distributed-systems\ncreated: 2026-05-11\ntags: [consistency, availability, partition-tolerance]\nconfidence: 0.92\nsources: []\n---\n\n# CAP Theorem\n\nThe CAP theorem states that a distributed system can guarantee at most two of:\nConsistency, Availability, Partition tolerance.\n\n## Connections\n- [[consensus]] — CAP defines the tradeoff space\n```\n\n`[[wikilinks]]` create graph edges between nodes. Markdown is the source of truth — SQLite is a derived index for fast search and routing.\n\n### Adding nodes manually\n\nDrop a markdown file into `knowledge/graph/<section>/<node-id>.md` following the format above. Then sync the links:\n\n```bash\npython3 -c \"\nimport sys; sys.path.insert(0,'src')\nfrom akms.config import load_config\nfrom akms.knowledge import HybridGraph\ng = HybridGraph(load_config().knowledge)\nprint(f'Synced {g.sync_links()} wikilinks')\n\"\n```\n\n---\n\n## The Three Roles\n\n### Agent 1 — your IDE agent\n\nYour Claude Code session, Codex, or any agent that can run shell commands. It reads `agents.md` to learn the available `akms` commands and calls them as skills. AKMS provides no dedicated \"chat\" agent — your IDE is already Agent 1.\n\n### Agent 2 — Expert (knowledge retrieval)\n\nOne Expert per knowledge section. Experts pre-load their section into a home state (a Python list of messages). Each query builds `home_messages + [question]` — a new list — and discards it after answering. The home state is never mutated.\n\n```\nExpert home state:  [system prompt + all section nodes]  (Python list)\n                              │\n         query arrives ──► home_msgs + [question] ──► answer ──► discard\n                              │\n                    home state unchanged\n```\n\nThis is the fork/rollback pattern — list concatenation is the fork, discarding the result is the rollback. No context drift across queries.\n\n### Agent 3 — Librarian (knowledge curation)\n\nRuns when you call `akms ingest` or after sessions via `ingest_log()`. Reads documents, extracts structured knowledge, and adds nodes.\n\n---\n\n## Configuration Reference\n\n### Minimal (one provider)\n\n```yaml\nproviders:\n  claude:\n    api_key: \"${CLAUDE_API_KEY}\"\n    models:\n      - claude-sonnet-4-6\n\nagent_assignments:\n  expert:     { provider: claude, model: claude-sonnet-4-6 }\n  librarian:  { provider: claude, model: claude-sonnet-4-6 }\n\nknowledge:\n  graph_dir: \"knowledge/graph\"\n  archives_dir: \"knowledge/archives\"\n  logs_dir: \"knowledge/logs\"\n  db_path: \"knowledge/akms.db\"\n```\n\n### Multi-provider (different agents on different models)\n\n```yaml\nproviders:\n  claude:\n    api_key: \"${CLAUDE_API_KEY}\"\n    models: [claude-sonnet-4-6, claude-opus-4-7]\n\n  openai:\n    api_key: \"${OPENAI_API_KEY}\"\n    models: [gpt-4o]\n\n  ollama:\n    base_url: \"http://localhost:11434\"\n    models: [llama3, mistral]\n\nagent_assignments:\n  expert:     { provider: openai, model: gpt-4o }\n  librarian:  { provider: claude, model: claude-sonnet-4-6 }\n\nexpert:\n  token_threshold: 50000   # sections larger than this are split into chunk experts\n\nknowledge:\n  graph_dir: \"knowledge/graph\"\n  archives_dir: \"knowledge/archives\"\n  logs_dir: \"knowledge/logs\"\n  db_path: \"knowledge/akms.db\"\n```\n\nAPI keys are never stored in the file — always use environment variables.\n\n---\n\n## Provider Support\n\n| Provider | Needs | Notes |\n|---|---|---|\n| Claude | `pip install -e .` | Default, included |\n| OpenAI / Azure | `pip install -e .` | Default, included |\n| DeepSeek | `pip install -e .` | OpenAI-compatible |\n| Google Gemini | `pip install -e \".[gemini]\"` | |\n| Ollama (local) | `pip install -e \".[ollama]\"` + run Ollama | No API key |\n\nSwitching providers: change `agent_assignments` in the config. No code changes needed.\n\n---\n\n## Python API\n\n### Minimal setup\n\n```python\nfrom akms.config import load_config\nfrom akms.providers.registry import build_default_registry\nfrom akms.knowledge import HybridGraph\nfrom akms.core.orchestrator import Orchestrator\n\nconfig = load_config()\nregistry = build_default_registry()\ngraph = HybridGraph(config.knowledge)\ngraph.init_graph_dirs()\n\norchestrator = Orchestrator(config=config, registry=registry, graph=graph)\n```\n\n### Add a knowledge node\n\n```python\ngraph.add_node(\n    section=\"distributed-systems\",\n    node_id=\"raft\",\n    title=\"Raft Consensus\",\n    content=\"Raft is a consensus algorithm designed for understandability...\",\n    tags=[\"consensus\", \"leader-election\"],\n    confidence=0.95,\n)\n```\n\n### Search the graph\n\n```python\nresults = graph.search(\"leader election\", top_k=5)\nfor node, score in results:\n    print(f\"[{score:.1f}] {node['title']}\")\n```\n\n### Query an Expert\n\n```python\nanswer = orchestrator.query_expert(\n    section=\"distributed-systems\",\n    question=\"What are the differences between Raft and Paxos?\"\n)\nprint(answer)\n```\n\n### Use the Librarian\n\n```python\nfrom akms.agents.librarian import LibrarianAgent\n\nprovider = registry.create_from_config(\"claude\", config.providers[\"claude\"])\nlibrarian = LibrarianAgent(provider=provider, model=\"claude-sonnet-4-6\", config=config)\n\n# Ingest a document\nlibrarian.digest_document(\"papers/raft.md\", graph)\n\n# Find broken wikilinks\nfor issue in librarian.check_consistency(graph):\n    print(f\"Broken: [[{issue['broken_link']}]] in {issue['node_id']}\")\n\n# Archive a wrong node\nlibrarian.archive_node(\"distributed-systems\", \"old-explanation\", \"Incorrect claim\", graph)\n```\n\n---\n\n## Dynamic Expert Scaling\n\nFor sections exceeding `expert.token_threshold` tokens, AKMS automatically splits the section into chunk experts:\n\n```yaml\nexpert:\n  token_threshold: 50000\n```\n\n- Single sections: pooled under `\"section-name\"`\n- Split sections: `\"section-name:0\"`, `\"section-name:1\"`, ...\n- Sentinel key `\"section-name:__split__\"` stores the chunk list\n- Query routing: question is tokenized, scored against each chunk by keyword overlap, top-2 chunks are queried and answers concatenated\n\n```python\n# Force-recreate an expert (evicts cached instance)\norc.spawn_expert(\"distributed-systems\")\n\n# Reload only if already cached\norc.refresh_expert(\"distributed-systems\")\n```\n\n---\n\n## Project Structure\n\n```\nakms/\n├── akms_config.yaml.example     ← reference config\n├── agents.md                    ← agent instructions (read this to use AKMS)\n├── how-this-works.md            ← architecture deep-dive with diagrams\n├── src/akms/\n│   ├── cli.py                   ← akms command entry point\n│   ├── config.py                ← AKMSConfig, KnowledgeConfig, ExpertConfig\n│   ├── agents/\n│   │   ├── base.py              ← BaseAgent (send, ask, logging)\n│   │   ├── expert.py            ← Expert agent (fork/rollback, load_section)\n│   │   ├── librarian.py         ← Librarian agent (ingest, check, archive)\n│   ├── core/\n│   │   ├── message.py           ← provider-agnostic message types\n│   │   └── orchestrator.py      ← expert pool, dynamic splitting, query routing\n│   ├── knowledge/\n│   │   ├── wiki.py              ← markdown layer (source of truth)\n│   │   ├── db.py                ← SQLite layer (derived index)\n│   │   ├── graph.py             ← unified HybridGraph facade\n│   │   └── search.py            ← keyword search\n│   ├── providers/               ← claude, openai, gemini, deepseek, ollama\n│   └── logging/\n│       └── conversation_log.py  ← JSONL conversation logger\n├── knowledge/                   ← created by akms init\n└── tests/                       ← pytest suite\n```\n\n---\n\n## Tips\n\n**You only need one API key.** Start with Claude or OpenAI alone and expand later.\n\n**Start small.** Run `akms init`, ingest one document, then `akms search` or `akms ask`. Don't build a large graph before testing the flow.\n\n**Sections are directories — pick a naming convention.** `distributed-systems` and `distributed_systems` are different sections. Stick with `kebab-case`.\n\n**Archive, don't delete.** Use `akms archive` or `librarian.archive_node()` — the node moves to `knowledge/archives/` with a reason and timestamp. History is preserved.\n\n**Markdown is the source of truth.** The SQLite database is a derived index — always reconstructable from the markdown files. Commit the `knowledge/graph/` directory to git.\n",
+    "plannedStatements": []
+  },
+  "implementedFeatures": [],
+  "plannedFeatures": [],
+  "questions": [
+    "What problem does Agent-Knowledge-Management-System solve, and who has used it?",
+    "Which Python modules did you personally implement, and who else contributed?",
+    "How do src/akms/__init__.py and src/akms/agents/__init__.py interact, and which features actually run today?",
+    "Why did you choose Python, and what tradeoffs or failures did you encounter?",
+    "What results, limitations, and lessons can you support with screenshots, tests, or measurements?"
+  ],
+  "answers": {},
+  "snippet": null,
+  "caseStudy": {
+    "overview": [],
+    "motivation": [],
+    "contributions": [],
+    "architecture": [],
+    "decisions": [],
+    "challenges": [],
+    "results": [],
+    "limitations": [],
+    "lessons": []
+  }
+}
